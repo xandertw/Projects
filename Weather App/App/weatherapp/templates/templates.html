@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Info</title>
+</head>
+<body>
+    <h1>Weather Information</h1>
+    <form method="get">
+        <label for="city">Enter city:</label>
+        <input type="text" id="city" name="city">
+        <button type="submit">Get Weather</button>
+    </form>
+
+    {% if weather %}
+        <h2>City: {{ weather.city }}</h2>
+        <p>Temperature: {{ weather.temperature }}°C</p>
+        <p>Humidity: {{ weather.humidity }}%</p>
+        <p>Wind Speed: {{ weather.wind_speed }} km/h</p>
+    {% else %}
+        <p>No weather data available. Enter a city and press "Get Weather".</p>
+    {% endif %}
+</body>
+</html>
